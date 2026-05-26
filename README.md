@@ -18,7 +18,3 @@ This repo was made to sync my configuration between devices, but feel free to ut
 
 # A few small notes
 This is supposed to be a desktop configuration, not a server configuration (my server runs NixOS, I will put that out soon).
-
-# Shoutouts
-- Daan: Taught me the NixOS basics and how to use flakes and everything. Hes quite good at teaching lol.
-- Daniel: Motivated me to make this repo.
