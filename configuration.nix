@@ -37,6 +37,12 @@
 
   services.xserver.excludePackages = [ pkgs.xterm ]; # remove xterm
 
+  # auto updating system to the stable channel.
+  system.autoUpgrade.enable = true; # enable the whole thing
+  system.autoUpgrade.channel = "https://channels.nixos.org/nixos-25.11"; # this sets the channel to the STABLE one, this system does NOT have rolling release.
+  system.autoUpgrade.allowReboot = false; # this might be confusing, but this makes it so your system dosen't reboot when an update gets pushed (like an init or kernel update)
+
+
   services.resolved.enable = true; # resolved, required for vpn support
   services.mullvad-vpn.enable = true; # enable mullvad vpn
   services.mullvad-vpn.package = pkgs.mullvad-vpn; # enable the gui for mullvad vpm
