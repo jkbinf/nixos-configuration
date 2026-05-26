@@ -31,17 +31,17 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
 
-  programs.niri.enable = true;
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  programs.niri.enable = true; # a window manager
+  services.xserver.enable = true; # xserver
+  services.displayManager.sddm.enable = true; # display manager, adds login screen.
 
   services.xserver.excludePackages = [ pkgs.xterm ]; # remove xterm
 
-  services.resolved.enable = true;
-  services.mullvad-vpn.enable = true;
-  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+  services.resolved.enable = true; # resolved, required for vpn support
+  services.mullvad-vpn.enable = true; # enable mullvad vpn
+  services.mullvad-vpn.package = pkgs.mullvad-vpn; # enable the gui for mullvad vpm
 
-  services.ratbagd.enable = true;
+  services.ratbagd.enable = true; # ratbagd for logitech superlight pro x configuration
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -70,14 +70,15 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "gb";
-    variant = "pl";
+    layout = "gb"; # british keyboard layout
+    variant = "pl"; # add symbols of the polish language to the british keyboard
   };
 
   # Configure console keymap
   console.keyMap = "uk";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
+  # DO NOT COPY THIS!!! I REPEAT, DO NOT COPY THIS AND KEEP YOUR USER!!
   users.users.jakub = {
     isNormalUser = true;
     description = "Jakub M";
@@ -85,7 +86,7 @@
     packages = with pkgs; [];
   };
 
-  # Allow unfree packages
+  # Allow unfree packages (non open source)
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
